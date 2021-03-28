@@ -8,7 +8,7 @@ route.route("/").get(async (req, res, next) => {
 	let response;
 
 	try {
-		response = await axios(
+		response = await axios.get(
 			`https://free.currconv.com/api/v7/currencies?apiKey=${process.env.CURRENCY_API_KEY}`
 		);
 	} catch (error) {

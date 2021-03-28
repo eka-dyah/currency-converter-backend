@@ -10,7 +10,7 @@ route.route("/:origin&:goal").get(async (req, res, next) => {
     console.log(origin, goal)
 	let response;
 	try {
-		response = await axios(
+		response = await axios.get(
 			`https://free.currconv.com/api/v7/convert?q=${origin}_${goal},${goal}_${origin}&compact=ultra&apiKey=${process.env.CURRENCY_API_KEY}`
         );
 	} catch (error) {
